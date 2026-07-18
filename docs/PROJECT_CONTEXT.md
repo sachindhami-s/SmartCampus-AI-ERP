@@ -141,6 +141,18 @@ SmartCampus-AI-ERP
 
 ---
 
+### Faculty Module
+- [x] Faculty Model Created
+- [x] Faculty Controller Created
+- [x] Faculty Routes Created
+- [x] Faculty Registration API
+- [x] Required Fields Validation
+- [x] Duplicate Email Validation
+- [x] Password Hashing using bcrypt
+- [x] Password Removed from API Response
+- [x] Faculty Data Stored in MongoDB
+- [x] Thunder Client Testing Completed
+
 # API Documentation
 
 ## Base URL
@@ -168,6 +180,32 @@ Not Required
 ```
 
 ---
+
+---
+
+## Faculty APIs
+
+### Register Faculty
+
+POST
+```
+/faculty/register
+```
+
+Authentication
+
+```
+Not Required
+```
+
+Returns
+
+
+201 Created
+
+
+Creates a new faculty account with a hashed password.
+
 
 ### Login Student
 
@@ -277,6 +315,20 @@ Admin Only
 
 ---
 
+---
+
+## Faculty Collection
+
+| Field | Type | Required | Notes |
+|------|------|----------|------|
+| name | String | Yes | Faculty Name |
+| email | String | Yes | Unique |
+| password | String | Yes | Stored as bcrypt hash |
+| department | String | Yes | Department Name |
+| role | String | Auto | faculty |
+| createdAt | Date | Auto | Timestamp |
+| updatedAt | Date | Auto | Timestamp |
+
 # Current Project Status
 
 ## Current Phase
@@ -285,7 +337,7 @@ Backend Development
 
 ## Backend Completion
 
-Approximately 35%
+Approximately 40%
 
 ## Frontend Completion
 
@@ -295,8 +347,14 @@ Approximately 35%
 
 Completed
 
+Student
 - Student Registration
 - Student Login
+
+Faculty
+- Faculty Registration
+
+Security
 - Password Hashing
 - JWT Authentication
 - Role-Based Authorization
@@ -307,18 +365,20 @@ Completed
 
 - MongoDB Atlas Connection
 - Student Collection
+- Faculty Collection
 
 ## Modules Completed
 
 - Student Module
+- Faculty Registration
 
 ## Modules In Progress
 
-- Role-Based Authorization
+- Faculty Module
 
 ## Next Module
 
-Faculty Management System
+Faculty Login API
 
 ## Upcoming Modules
 
@@ -412,8 +472,12 @@ The project should include:
 
 ## Next Development Task
 
-Build the Faculty Management Module.
+Continue Faculty Management Module
+
+Current Feature:
+Faculty Login API
 
 Status:
 
-Not Started
+Faculty Registration Completed
+Faculty Login In Progress

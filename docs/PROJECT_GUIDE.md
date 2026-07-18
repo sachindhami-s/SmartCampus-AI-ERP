@@ -145,3 +145,23 @@ Fix all errors before moving forward.
 
 ## Step 10
 Update project documentation after completing the feature.
+
+
+
+# Documentation Update Rules
+
+After every completed feature, update:
+
+PROJECT_CONTEXT.md
+
+- Completed Features
+- API Documentation
+- Database Changes
+- Current Project Status
+- Next Development Task
+
+PROJECT_GUIDE.md
+
+- Only update if the development workflow, coding standards, or project process changes.
+
+Do not use PROJECT_GUIDE.md as a progress log.
