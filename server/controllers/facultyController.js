@@ -168,12 +168,76 @@ const getFacultyById = async (req, res) => {
 
 // Update Faculty
 const updateFaculty = async (req, res) => {
+    try {
 
+        const { id } = req.params;
+        const { name, email, department } = req.body;
+        const faculty = await Faculty.findById(id);
+
+        if (!faculty) {
+            return res.status(404).json({
+                success: false,
+                message: "Faculty not found"
+            });
+        }
+
+        faculty.name = name;
+        faculty.email = email;
+        faculty.department = department;
+
+        await faculty.save();
+
+        return res.status(200).json({
+            success: true,
+            message: "Faculty updated successfully",
+            data: {
+                _id: faculty._id,
+                name: faculty.name,
+                email: faculty.email,
+                department: faculty.department,
+                role: faculty.role,
+                updatedAt: faculty.updatedAt
+            }
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+            error: error.message
+        });
+    }
 };
 
 // Delete Faculty
 const deleteFaculty = async (req, res) => {
+    try {
 
+        const { id } = req.params;
+
+        const faculty = await Faculty.findById(id);
+
+        if (!faculty) {
+            return res.status(404).json({
+                success: false,
+                message: "Faculty not found"
+            });
+        }
+
+        await faculty.deleteOne();
+
+        return res.status(200).json({
+            success: true,
+            message: "Faculty deleted successfully"
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+            error: error.message
+        });
+    }
 };
 
 module.exports = {

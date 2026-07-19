@@ -64,6 +64,7 @@ Version Control
 # Current Folder Structure
 
 ```text
+
 SmartCampus-AI-ERP
 │
 ├── client
@@ -78,19 +79,19 @@ SmartCampus-AI-ERP
 │   ├── utils
 │   ├── .env
 │   ├── index.js
-│   ├── package.json
+│   └── package.json
 │
-docs
+├── docs
+│   ├── CHATGPT_INSTRUCTIONS.md
+│   ├── PROJECT_CONTEXT.md
+│   ├── PROJECT_GUIDE.md
+│   ├── PROJECT_MASTER.md
+│   ├── Project_Vision.md
+│   ├── Database_Design.md
+│   └── User_Roles.md
 │
-├── CHATGPT_INSTRUCTIONS.md
-├── PROJECT_CONTEXT.md
-├── PROJECT_GUIDE.md
-├── PROJECT_MASTER.md
-├── Project_Vision.md
-├── Database_Design.md
-├── User_Roles.md
-│
-├── README.md
+└── README.md
+
 ```
 
 ---
@@ -152,6 +153,8 @@ docs
 - [x] Faculty Login API
 - [x] Get All Faculty API
 - [x] Get Faculty By ID API
+- [x] Update Faculty API
+- [x] Delete Faculty API
 - [x] Required Fields Validation
 - [x] Duplicate Email Validation
 - [x] Password Hashing using bcrypt
@@ -285,26 +288,6 @@ Admin Only
 
 ---
 
-# Database Schema
-
-## Database Collections
-
-## Student Collection
-
-| Field | Type | Required | Notes |
-|------|------|----------|------|
-| name | String | Yes | Student Name |
-| registrationNumber | String | Yes | Unique |
-| email | String | Yes | Unique |
-| password | String | Yes | Stored as bcrypt hash |
-| role | String | Yes | student / faculty / admin |
-| department | String | Yes | CSE, IT, ECE, EEE, ME, CE |
-| semester | Number | Yes | 1 - 8 |
-| createdAt | Date | Auto | Timestamp |
-| updatedAt | Date | Auto | Timestamp |
-
----
-
 ## Faculty APIs
 
 ### Register Faculty
@@ -326,6 +309,8 @@ Returns
 - 201 Created
 - Creates a new faculty account with a hashed password.
 
+---
+
 ### Login Faculty
 
 POST
@@ -344,6 +329,8 @@ Returns
 
 - JWT Token
 - Faculty Details
+
+---
 
 ### Get All Faculty
 
@@ -364,31 +351,15 @@ Returns
 - List of all faculty members
 - Total faculty count
 
-### Get All Faculty
-
-GET
---
-/faculty
---
-
-Authentication
---
-Not Required
---
-
-Returns
-
-- List of all faculty members
-
 ---
 
 ### Get Faculty By ID
 
 GET
 
---
+```
 /faculty/:id
---
+```
 
 Authentication
 --
@@ -401,6 +372,68 @@ Returns
 
 - Faculty details by ID
 
+---
+
+### Update Faculty
+
+PUT
+
+```
+/faculty/:id
+```
+
+Authentication
+
+```
+Not Required
+```
+
+Returns
+
+- Updated faculty details
+
+---
+
+### Delete Faculty
+
+DELETE
+
+```
+/faculty/:id
+```
+
+Authentication
+
+```
+Not Required
+```
+
+Returns
+
+- 200 OK
+- Faculty deleted successfully
+
+---
+
+# Database Schema
+
+
+
+## Student Collection
+
+| Field | Type | Required | Notes |
+|------|------|----------|------|
+| name | String | Yes | Student Name |
+| registrationNumber | String | Yes | Unique |
+| email | String | Yes | Unique |
+| password | String | Yes | Stored as bcrypt hash |
+| role | String | Yes | student / faculty / admin |
+| department | String | Yes | CSE, IT, ECE, EEE, ME, CE |
+| semester | Number | Yes | 1 - 8 |
+| createdAt | Date | Auto | Timestamp |
+| updatedAt | Date | Auto | Timestamp |
+
+---
 
 ## Faculty Collection
 
@@ -414,19 +447,31 @@ Returns
 | createdAt | Date | Auto | Timestamp |
 | updatedAt | Date | Auto | Timestamp |
 
+---
+
+## Database Collections
+
+
+
 # Current Project Status
 
 ## Current Phase
 
 Backend Development
 
+---
+
 ## Backend Completion
 
-Approximately 50%
+Approximately 60%
+
+---
 
 ## Frontend Completion
 
 0%
+
+---
 
 ## Authentication
 
@@ -446,6 +491,8 @@ Security
 - JWT Authentication
 - Role-Based Authorization
 
+---
+
 ## Database
 
 Completed
@@ -454,31 +501,43 @@ Completed
 - Student Collection
 - Faculty Collection
 
+---
+
 ## Modules Completed
 
 - Student Module
-- Faculty Authentication
+- Faculty Module
+
+---
 
 ## Modules In Progress
 
-- Faculty CRUD APIs
+- Admin Module
+
+---
 
 ## Current Feature
 
-- Update Faculty API
+- Admin Authentication
 
+---
 
-## Next Module
+## Next Development Task
+
+Continue Admin Module
 
 Current Feature:
-Get Faculty By ID API
+Admin Registration API
 
 Status:
 
-Faculty Registration Completed
-Faculty Login Completed
-Get All Faculty Completed
-Get Faculty By ID In Progress
+Student Module Completed
+
+Faculty Module Completed
+
+Admin Module In Progress
+
+---
 
 ## Upcoming Modules
 
@@ -575,10 +634,13 @@ The project should include:
 Continue Faculty Management Module
 
 Current Feature:
-Faculty CRUD APIs
+Delete Faculty API
 
 Status:
 
 Faculty Registration Completed
 Faculty Login Completed
-Faculty CRUD In Progress
+Get All Faculty Completed
+Get Faculty By ID Completed
+Update Faculty Completed
+Delete Faculty In Progress
