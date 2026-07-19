@@ -80,12 +80,15 @@ SmartCampus-AI-ERP
 │   ├── index.js
 │   ├── package.json
 │
-├── docs
-│   ├── PROJECT_CONTEXT.md
-│   ├── User_Roles.md
-│   ├── PROJECT_MASTER.md
-│   ├── Project_Vision.md
-│   ├── Database_Design.md
+docs
+│
+├── CHATGPT_INSTRUCTIONS.md
+├── PROJECT_CONTEXT.md
+├── PROJECT_GUIDE.md
+├── PROJECT_MASTER.md
+├── Project_Vision.md
+├── Database_Design.md
+├── User_Roles.md
 │
 ├── README.md
 ```
@@ -146,10 +149,13 @@ SmartCampus-AI-ERP
 - [x] Faculty Controller Created
 - [x] Faculty Routes Created
 - [x] Faculty Registration API
+- [x] Faculty Login API
 - [x] Required Fields Validation
 - [x] Duplicate Email Validation
 - [x] Password Hashing using bcrypt
-- [x] Password Removed from API Response
+- [x] Password Verification using bcrypt
+- [x] JWT Token Generation
+- [x] Password Removed from API Responses
 - [x] Faculty Data Stored in MongoDB
 - [x] Thunder Client Testing Completed
 
@@ -183,28 +189,6 @@ Not Required
 
 ---
 
-## Faculty APIs
-
-### Register Faculty
-
-POST
-```
-/faculty/register
-```
-
-Authentication
-
-```
-Not Required
-```
-
-Returns
-
-
-201 Created
-
-
-Creates a new faculty account with a hashed password.
 
 
 ### Login Student
@@ -299,6 +283,8 @@ Admin Only
 
 # Database Schema
 
+## Database Collections
+
 ## Student Collection
 
 | Field | Type | Required | Notes |
@@ -315,7 +301,47 @@ Admin Only
 
 ---
 
----
+## Faculty APIs
+
+### Register Faculty
+
+POST
+```
+/faculty/register
+```
+
+
+Authentication
+
+```
+Not Required
+```
+
+Returns
+
+- 201 Created
+- Creates a new faculty account with a hashed password.
+
+### Login Faculty
+
+POST
+
+```
+/faculty/login
+```
+
+Authentication
+
+```
+Not Required
+```
+
+Returns
+
+- JWT Token
+- Faculty Details
+
+
 
 ## Faculty Collection
 
@@ -337,7 +363,7 @@ Backend Development
 
 ## Backend Completion
 
-Approximately 40%
+Approximately 45%
 
 ## Frontend Completion
 
@@ -347,15 +373,17 @@ Approximately 40%
 
 Completed
 
-Student
-- Student Registration
-- Student Login
+Student Authentication
+- Registration
+- Login
 
-Faculty
-- Faculty Registration
+Faculty Authentication
+- Registration
+- Login
 
 Security
-- Password Hashing
+- bcrypt Password Hashing
+- Password Verification
 - JWT Authentication
 - Role-Based Authorization
 
@@ -370,15 +398,15 @@ Completed
 ## Modules Completed
 
 - Student Module
-- Faculty Registration
+- Faculty Authentication
 
 ## Modules In Progress
 
-- Faculty Module
+- Faculty CRUD APIs
 
 ## Next Module
 
-Faculty Login API
+Faculty CRUD APIs
 
 ## Upcoming Modules
 
@@ -475,9 +503,10 @@ The project should include:
 Continue Faculty Management Module
 
 Current Feature:
-Faculty Login API
+Faculty CRUD APIs
 
 Status:
 
 Faculty Registration Completed
-Faculty Login In Progress
+Faculty Login Completed
+Faculty CRUD In Progress

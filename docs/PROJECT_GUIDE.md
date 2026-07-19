@@ -57,6 +57,18 @@ The goal is to learn backend and full-stack development while building a real-wo
 
 ---
 
+## Additional Coding Principles
+
+- Keep controllers focused on business logic.
+- Keep routes responsible only for endpoint mapping.
+- Keep models responsible only for database schemas.
+- Avoid duplicate code.
+- Reuse middleware whenever possible.
+- Write readable code before writing clever code.
+- Prefer consistency across modules.
+
+---
+
 ## Project Structure
 
 Follow the existing folder structure.
@@ -112,6 +124,45 @@ Every API should include:
 
 ---
 
+# Testing Rules
+
+Every backend feature must be tested before it is considered complete.
+
+Testing Checklist
+
+- Verify successful requests.
+- Verify validation errors.
+- Verify authentication.
+- Verify authorization.
+- Verify database updates.
+- Verify error handling.
+
+Preferred Tool
+
+- Thunder Client
+
+---
+
+# Commit Message Convention
+
+Use professional commit messages.
+
+Examples
+
+feat: implement faculty login
+
+feat: implement attendance module
+
+fix: resolve JWT authentication bug
+
+docs: update project documentation
+
+refactor: simplify authentication middleware
+
+style: format controller code
+
+---
+
 # Development Workflow
 
 Every feature in this project must follow the same workflow.
@@ -146,6 +197,26 @@ Fix all errors before moving forward.
 ## Step 10
 Update project documentation after completing the feature.
 
+## Step 11
+
+Commit the completed feature to Git.
+
+## Step 12
+
+Push the latest changes to GitHub.
+
+Use the following workflow after every completed feature:
+
+git status
+
+git add .
+
+git status
+
+git commit -m "feat: <feature name>"
+
+git push
+
 
 
 # Documentation Update Rules
@@ -165,3 +236,20 @@ PROJECT_GUIDE.md
 - Only update if the development workflow, coding standards, or project process changes.
 
 Do not use PROJECT_GUIDE.md as a progress log.
+
+---
+
+# Feature Completion
+
+## Feature Completion Checklist
+
+Before marking a feature complete:
+
+- [ ] Code implemented
+- [ ] Tested in Thunder Client
+- [ ] Errors fixed
+- [ ] PROJECT_CONTEXT.md updated
+- [ ] PROJECT_GUIDE.md updated
+- [ ] Git commit created
+- [ ] GitHub pushed
+- [ ] README updated (if needed)
