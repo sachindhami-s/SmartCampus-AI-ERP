@@ -111,6 +111,15 @@ Utils
 
 ---
 
+## Authentication Reusability
+
+- Store JWT generation inside a reusable utility.
+- Keep authentication logic inside middleware.
+- Avoid duplicating authentication code in controllers.
+- Reuse the same middleware across Student, Faculty, and Admin modules.
+
+---
+
 ## Security Rules
 
 - Never store passwords as plain text.

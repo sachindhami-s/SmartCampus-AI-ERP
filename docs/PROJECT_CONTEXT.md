@@ -130,6 +130,10 @@ SmartCampus-AI-ERP
 - [x] JWT Token Generation
 - [x] JWT Authentication Middleware
 - [x] Admin Authorization Middleware
+- [x] Shared JWT Token Utility
+- [x] Shared Authentication Middleware
+- [x] Password Removed from Student API Responses
+- [x] Password Removed from Faculty API Responses
 
 ### Roles
 - [x] Student Role
@@ -525,9 +529,11 @@ Completed
 
 ---
 
-## Current Feature
+## Current Feature:
+Authentication Refactoring Completed
 
-- Admin Authentication
+Next Feature:
+Admin Module
 
 ---
 

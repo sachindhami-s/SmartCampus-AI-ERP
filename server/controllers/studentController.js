@@ -180,7 +180,7 @@ res.status(200).json({
 
 const getAllStudents = async (req, res) => {
     try {
-        const students = await Student.find();
+        const students = await Student.find().select("-password");
 
         res.status(200).json({
             success: true,

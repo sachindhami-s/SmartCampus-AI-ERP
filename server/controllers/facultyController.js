@@ -206,7 +206,7 @@ const deleteFaculty = async (req, res) => {
 
         const { id } = req.params;
 
-        const faculty = await Faculty.findById(id);
+        const faculty = await Faculty.findById(id).select("-password");
 
         if (!faculty) {
             return res.status(404).json({

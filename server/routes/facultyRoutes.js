@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const auth = require("../middleware/authMiddleware");
+const admin = require("../middleware/adminMiddleware");
+
 const {
     registerFaculty,
     loginFaculty,
@@ -17,15 +20,15 @@ router.post("/register", registerFaculty);
 router.post("/login", loginFaculty);
 
 // Get All Faculty
-router.get("/", getAllFaculty);
+router.get("/", auth,  getAllFaculty);
 
 // Get Faculty By ID
-router.get("/:id", getFacultyById);
+router.get("/:id", auth, getFacultyById);
 
 // Update Faculty
-router.put("/:id", updateFaculty);
+router.put("/:id", auth, updateFaculty);
 
 // Delete Faculty
-router.delete("/:id", deleteFaculty);
+router.delete("/:id", auth, admin, deleteFaculty);
 
 module.exports = router;

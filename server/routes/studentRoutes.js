@@ -1,6 +1,7 @@
 const express = require("express");
-
 const router = express.Router();
+
+const auth = require("../middleware/authMiddleware");
 
 const {
     registerStudent,
@@ -10,8 +11,6 @@ const {
     updateStudent,
     deleteStudent
 } = require("../controllers/studentController");
-
-const auth = require("../middleware/authMiddleware");
 
 const admin = require("../middleware/adminMiddleware");
 

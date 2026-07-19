@@ -26,13 +26,13 @@ const auth = (req, res, next) => {
             process.env.JWT_SECRET
         );
 
-        req.student = decoded;
+        req.user = decoded;
 
         next();
 
     } catch (error) {
 
-        res.status(401).json({
+        return res.status(401).json({
             success: false,
             message: "Unauthorized"
         });
