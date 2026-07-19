@@ -151,6 +151,7 @@ docs
 - [x] Faculty Registration API
 - [x] Faculty Login API
 - [x] Get All Faculty API
+- [x] Get Faculty By ID API
 - [x] Required Fields Validation
 - [x] Duplicate Email Validation
 - [x] Password Hashing using bcrypt
@@ -363,6 +364,42 @@ Returns
 - List of all faculty members
 - Total faculty count
 
+### Get All Faculty
+
+GET
+--
+/faculty
+--
+
+Authentication
+--
+Not Required
+--
+
+Returns
+
+- List of all faculty members
+
+---
+
+### Get Faculty By ID
+
+GET
+
+--
+/faculty/:id
+--
+
+Authentication
+--
+
+
+Not Required
+--
+
+Returns
+
+- Faculty details by ID
 
 
 ## Faculty Collection
@@ -425,6 +462,11 @@ Completed
 ## Modules In Progress
 
 - Faculty CRUD APIs
+
+## Current Feature
+
+- Update Faculty API
+
 
 ## Next Module
 
