@@ -150,6 +150,7 @@ docs
 - [x] Faculty Routes Created
 - [x] Faculty Registration API
 - [x] Faculty Login API
+- [x] Get All Faculty API
 - [x] Required Fields Validation
 - [x] Duplicate Email Validation
 - [x] Password Hashing using bcrypt
@@ -158,6 +159,8 @@ docs
 - [x] Password Removed from API Responses
 - [x] Faculty Data Stored in MongoDB
 - [x] Thunder Client Testing Completed
+
+---
 
 # API Documentation
 
@@ -341,6 +344,25 @@ Returns
 - JWT Token
 - Faculty Details
 
+### Get All Faculty
+
+GET
+
+```
+/faculty
+```
+
+Authentication
+
+```
+Not Required
+```
+
+Returns
+
+- List of all faculty members
+- Total faculty count
+
 
 
 ## Faculty Collection
@@ -363,7 +385,7 @@ Backend Development
 
 ## Backend Completion
 
-Approximately 45%
+Approximately 50%
 
 ## Frontend Completion
 
@@ -406,7 +428,15 @@ Completed
 
 ## Next Module
 
-Faculty CRUD APIs
+Current Feature:
+Get Faculty By ID API
+
+Status:
+
+Faculty Registration Completed
+Faculty Login Completed
+Get All Faculty Completed
+Get Faculty By ID In Progress
 
 ## Upcoming Modules
 

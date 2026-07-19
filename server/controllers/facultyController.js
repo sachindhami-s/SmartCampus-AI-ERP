@@ -121,7 +121,20 @@ return res.status(200).json({
 
 // Get All Faculty
 const getAllFaculty = async (req, res) => {
-
+    try {
+        const faculties = await Faculty.find().select("-password");
+        return res.status(200).json({
+            success: true,
+            count: faculties.length,
+            data: faculties
+});
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+            error: error.message
+        });
+    }
 };
 
 // Get Faculty By ID
