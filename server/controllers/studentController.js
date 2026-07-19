@@ -1,8 +1,6 @@
 const Student = require("../models/Student");
-
 const bcrypt = require("bcryptjs");
-
-const jwt = require("jsonwebtoken");
+const generateToken = require("../utils/generateToken");
 
 const registerStudent = async (req, res) => {
     try {
@@ -162,13 +160,7 @@ if (!isMatch) {
     });
 }
 
-const token = jwt.sign(
-    { id: student._id },
-    process.env.JWT_SECRET,
-    {
-        expiresIn: "1d"
-    }
-);
+const token = generateToken(student._id, student.role);
 
 res.status(200).json({
     success: true,

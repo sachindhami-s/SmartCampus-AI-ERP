@@ -1,6 +1,6 @@
 const Faculty = require("../models/Faculty");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+const generateToken = require("../utils/generateToken");
 
 // Register Faculty
 const registerFaculty = async (req, res) => {
@@ -86,16 +86,7 @@ if (!isPasswordMatch) {
     });
 }
 
-const token = jwt.sign(
-    {
-        id: faculty._id,
-        role: faculty.role
-    },
-    process.env.JWT_SECRET,
-    {
-        expiresIn: "7d"
-    }
-);
+const token = generateToken(faculty._id, faculty.role);
 
 return res.status(200).json({
     success: true,

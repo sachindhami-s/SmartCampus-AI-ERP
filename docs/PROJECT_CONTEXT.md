@@ -166,6 +166,15 @@ SmartCampus-AI-ERP
 
 ---
 
+### Code Refactoring
+
+- [x] Reusable JWT Token Utility Created
+- [x] Faculty Login Refactored
+- [x] Student Login Refactored
+- [x] Duplicate JWT Code Removed
+
+---
+
 # API Documentation
 
 ## Base URL

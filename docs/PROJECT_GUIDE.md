@@ -102,6 +102,15 @@ Utils
 
 ---
 
+## Code Reusability
+
+- Avoid duplicate business logic.
+- Move common functionality into the utils folder.
+- Reuse utility functions across controllers.
+- Keep controllers focused only on request handling and business logic.
+
+---
+
 ## Security Rules
 
 - Never store passwords as plain text.
