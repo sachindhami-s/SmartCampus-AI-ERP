@@ -55,6 +55,65 @@ const registerAdmin = async (req, res) => {
     }
 };
 
+
+// Login Admin
+const loginAdmin = async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: "Email and Password are required"
+            });
+        }
+
+        const admin = await Admin.findOne({ email });
+
+        if (!admin) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid Email or Password"
+            });
+        }
+
+        const isPasswordMatch = await bcrypt.compare(
+            password,
+            admin.password
+        );
+
+        if (!isPasswordMatch) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid Email or Password"
+            });
+        }
+
+        const token = generateToken(admin._id, admin.role);
+
+        return res.status(200).json({
+            success: true,
+            message: "Admin login successful",
+            token,
+            admin: {
+                _id: admin._id,
+                name: admin.name,
+                email: admin.email,
+                role: admin.role
+            }
+        });
+    } catch (error) {
+
+        return res.status(500).json({
+            success: false,
+            message: "Internal Server Error",
+            error: error.message
+        });
+
+    }
+};
+
 module.exports = {
-    registerAdmin
+    registerAdmin,
+    loginAdmin
 };

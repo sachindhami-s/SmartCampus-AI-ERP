@@ -184,8 +184,11 @@ SmartCampus-AI-ERP
 - [x] Admin Controller Created
 - [x] Admin Routes Created
 - [x] Admin Registration API
+- [x] Admin Login API
 - [x] Password Hashing using bcrypt
-- [x] Duplicate Email Validation
+- [x] Password Verification using bcrypt
+- [x] JWT Token Generation
+- [x] Password Removed from API Responses
 - [x] Admin Data Stored in MongoDB
 - [x] Thunder Client Testing Completed
 
@@ -532,7 +535,7 @@ Completed
 
 - Student Module
 - Faculty Module
-- Admin Registration
+- Admin Authentication
 
 ---
 
@@ -543,11 +546,8 @@ Completed
 ---
 
 ## Current Feature:
-Authentication Refactoring Completed
 
-Next Feature:
-Admin Module
-Admin Login API
+Admin CRUD APIs
 
 ---
 
