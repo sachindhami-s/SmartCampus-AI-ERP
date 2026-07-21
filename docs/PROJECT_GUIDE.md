@@ -257,6 +257,17 @@ Do not use PROJECT_GUIDE.md as a progress log.
 
 ---
 
+## Admin Module
+
+Completed:
+- Admin Model
+- Admin Registration API
+- Password Hashing
+- Duplicate Email Validation
+- MongoDB Integration
+
+---
+
 # Feature Completion
 
 ## Feature Completion Checklist
